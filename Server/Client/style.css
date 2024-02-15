@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: #ffffff;
+}
+
+h1 {
+    padding: 10px 0;
+    text-shadow:
+    0 0 7px #cac3c3,
+    0 0 10px #fff;
+}
+
+.mainBox {
+    background-color: transparent;
+    width: 561px;
+    height: 560px;
+}
+
+.mineral, .water, .temperature{
+    display: flex;
+    width: 187px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mineral_outer, .water_outer, .temperature_outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 2px;
+    border-radius: 22px;
+    width: 73px;
+    height: 468px;
+    overflow: hidden;
+}
+
+.mineral_outer{
+    background-image: linear-gradient(#2e7d32, #358639, #579d5b, #81c285,#8ccb8f, #ffffff);
+}
+.water_outer {
+    background-image: linear-gradient(#1565c0, #2872c6, #59799e, #819cf1,#b0c5de, #ffffff);
+}
+.temperature_outer{
+    background-image: linear-gradient(#da3b3b, #db4a4a, #e36d6d, #e89494,#ebafaf, #ffffff);
+}
+
+.mineral_adjust, .water_adjust, .temperature_adjust {
+    background-color: black;
+    width: 100%;
+    height: 0;
+    border-radius: 19px 19px 0 0;
+    max-height: 440px;
+    transition: height 0.5s ease-in-out;
+}
+
+#mnrl_adj {
+    height: 100%;
+}
+
+#watr_adj {
+    height: 54%;
+}
+
+#temp_adj {
+    height: 89%;
+}
+
+#mnrl_value, #watr_value, #temp_value {
+    color: black;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
