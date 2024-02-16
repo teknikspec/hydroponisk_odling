@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateStatusBars(data) {
     data = data.split("\n")
     var mineral_value = data[0]
-    var water_value = data[1]
-    var temp_value = data[2]
+    var temp_value = data[1]
+    var water_value = data[2]
 
     var mineral_Bar = document.getElementById('mnrl_adj');  
     var mineral_text = document.getElementById('mnrl_value');  
