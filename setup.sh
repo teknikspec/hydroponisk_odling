@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo apt-get install libserial-dev
+
+cd Scripts
+make
+cd ..
+
 mv $(pwd) ~/Desktop/
 
 cd ~/Desktop/hydroponisk_odling/Server/Host

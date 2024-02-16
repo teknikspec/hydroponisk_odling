@@ -2,7 +2,7 @@
 const MINERAL_MAX = 10.0
 const MINERAL_MIN = 0.0
 
-const WATER_MAX = 90.0
+const WATER_MAX = 45.0
 const WATER_MIN = 0.0
 
 const TEMPERATURE_MAX = 65.0

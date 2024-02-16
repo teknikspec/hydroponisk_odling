@@ -1,3 +1,9 @@
+#################################
+
+# Use if C++ program doesn't work
+
+#################################
+
 import subprocess
 from time import sleep
 import serial
