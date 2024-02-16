@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd $(pwd)/Server/Host
+mv $(pwd) ~/Desktop/
+
+cd ~/Desktop/hydroponisk_odling/Server/Host
 npm update express
 cd ../..
 
