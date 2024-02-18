@@ -15,7 +15,7 @@ app.use(express.static('../Client/'));
 
 // Set up sessions
 app.use(session({
-  secret: '3bd66f6ba56a0b5ae3af2b814b2e2446e487b756b8abd1d5eeca0dc6a5ae09af',
+  secret: 'KEY_PLACEHOLDER----CHANGE',
   resave: false,
   saveUninitialized: true,
 
