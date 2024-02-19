@@ -35,24 +35,14 @@ app.get('/welcome.css', (req, res) => {
   res.header('Content-Type', 'text/css');
 });
 
-// Serve the Statusbar_page html-file on request
-app.get('/statusbar', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Client/Statusbar_page/statusbar.html'));
-});
-// Serve the Statusbar_page css-file on request
-app.get('/statusbar.css', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Client/Statusbar_page/statusbar.css'));
-  res.header('Content-Type', 'text/css');
-});
-
-// Serve the Statusbar_page css-file on request
-app.get('/statusbar.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Client/Statusbar_page/statusbar.js'));
-});
 // Serve the Systemctl_page css-file on request
 app.get('/systemctl.css', (req, res) => {
   res.sendFile(path.join(__dirname, '../Client/Systemctl_page/systemctl.css'));
   res.header('Content-Type', 'text/css');
+});
+
+app.get('/commands', (req, res) => {
+  res.sendFile(path.join(__dirname, '/commands.txt'));
 });
 
 // Handle log-in form submission
@@ -104,20 +94,6 @@ async function checkCredentials(username, password) {
 
   return false;
 }
-
-// Serve statubar_data on request
-app.get('/getData', (req, res) => {
-  const filePath = path.join(__dirname, 'statusbar_data.txt');
-
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.send(data);
-    }
-  });
-});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
