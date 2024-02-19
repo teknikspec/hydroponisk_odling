@@ -1,0 +1,3 @@
+#!/bin/bash
+
+(./Scripts/fetch_data) &
