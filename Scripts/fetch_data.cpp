@@ -62,9 +62,8 @@ int main()
 {
     // Define Constants
     const char* serial_port = "/dev/ttyACM0";
-    const char* host_name = "192.168.1.221:3000/commands"
     const char* CPU_temp_command = "vcgencmd measure_temp";
-    const char* request_commands_command = "wget --quiet -O test.txt 192.168.1.221:3000/commands"
+    const char* request_commands_command = "wget --quiet -O test.txt 192.168.1.221:3000/commands";
     const char* current_data_file = "../Status_bars/data.txt";
     
     //Define variables
@@ -92,7 +91,6 @@ int main()
     {
         // Check for commands as the main priority
         executeCommand(request_commands_command);
-        std::ofstream saved_output_file(saved_data_file, std::ios::app);
 
 
         // Read a line from the serial port
@@ -110,7 +108,7 @@ int main()
         std::ofstream current_output_file(current_data_file);
 
         // Get CPU temperature and format it
-        temperature = executeCommand(command);
+        temperature = executeCommand(CPU_temp_command);
         temperature = temperature.substr(temperature.find('=') + 1, temperature.find('C') - temperature.find('=') - 2);
 
         if (saved_output_file.is_open()) {

@@ -12,6 +12,8 @@ npm install express
 cd ~/Desktop/hydroponisk_odling/Server/Host
 npm install express express-session bcrypt
 
+cd ~/Desktop/hydroponisk_odling
+
 cp $(pwd)/OBS_Settings/Untitled.json ~/.config/obs-studio/basic/scenes/Untitled.json
 
 mkdir ~/Desktop/Data
