@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill obs
+pkill -f node
