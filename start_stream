@@ -1,5 +1,5 @@
 #!/bin/bash
 
-(./Scripts/fetch_data) &
+(cd ./Scripts && ./fetch_data) &
 (cd Status_bars/Host && node server.js) &
 obs --startstreaming --minimize-to-tray --disable-shutdown-check

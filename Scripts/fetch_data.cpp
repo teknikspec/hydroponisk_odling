@@ -37,7 +37,7 @@ int main()
     const char* serial_port = "/dev/ttyACM0";
     const char* CPU_temp_command = "vcgencmd measure_temp";
     const char* request_commands_command = "wget --quiet -O ~/Desktop/hydroponisk_odling/Scripts/cmd.txt 192.168.1.221:3000/commands";
-    const char* current_data_file = "data.txt";
+    const char* current_data_file = "../Status_bars/Host/data.txt";
 
     //Define variables
     LibSerial::SerialStream serial_stream(serial_port);
@@ -86,7 +86,7 @@ int main()
         //executeCommand(request_commands_command);
         
         // Save to Data directory, which should be located in Desktop
-        std::string saved_data_file = "../Data/" + std::string(file_name_buffer) + ".txt";
+        std::string saved_data_file = "../../Data/" + std::string(file_name_buffer) + ".txt";
 
         // Open files to save the data
         std::ofstream saved_output_file(saved_data_file, std::ios::app);
