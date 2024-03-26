@@ -115,9 +115,7 @@ int main()
         }
 
         if(current_output_file.is_open()) {
-            current_output_file << seglist[0] << std::endl;
-            current_output_file << temperature << std::endl;
-            current_output_file << seglist[1];
+            current_output_file << seglist[0] << std::endl << temperature << std::endl << seglist[1] << std::endl;
             current_output_file.close();
         }
     }

@@ -1,6 +1,6 @@
 // Mineral max refers to the starting mineral level
-const MINERAL_MAX = 1.00
-const MINERAL_MIN = 0.00
+const MINERAL_MAX = 100.0
+const MINERAL_MIN = 0.0
 
 const WATER_MAX = 45.0
 const WATER_MIN = 0.0
@@ -29,15 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function updateStatusBars(data) {
-    data = data.split("\n")
-    var mineral_value = data[0]
-    var temp_value = data[1]
-    var water_value = data[2]
+    data = data.split("\n");
+    var mineral_value = data[0];
+    var temp_value = data[1];
+    var water_value = data[2];
+
+	  console.log(mineral_value);
 
     var mineral_Bar = document.getElementById('mnrl_adj');  
     var mineral_text = document.getElementById('mnrl_value');  
 
-    mineral_text.innerHTML = (mineral_value * 100) + "%";
+    mineral_text.innerHTML = (mineral_value) + "%";
     mineral_Bar.style.height = Math.ceil(100*(1 - (mineral_value - MINERAL_MIN) / (MINERAL_MAX - MINERAL_MIN))) + "%";  
 
     var water_Bar = document.getElementById('watr_adj');  
