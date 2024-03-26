@@ -6,7 +6,7 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -15,7 +15,7 @@ app.use(express.static('../Client/'));
 
 // Set up sessions
 app.use(session({
-  secret: 'KEY_PLACEHOLDER----CHANGE',
+  secret: 'sdhfusdh78rywer78gew7ygwq87etqgw7',
   resave: false,
   saveUninitialized: true,
 

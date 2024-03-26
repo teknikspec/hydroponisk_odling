@@ -6,6 +6,8 @@
 #include<iomanip>
 #include<chrono>
 #include<cstring>
+#include <vector>
+#include <sstream>
 //##########################
 
 // Execute a command and return result. Can be used for other commands aswell
@@ -81,6 +83,17 @@ int main()
 
         // Get data from arduino
         getline(serial_stream, serial_data);
+	
+
+	// Splits serial_data at the space
+	std::stringstream test(serial_data);
+	std::string segment;
+	std::vector<std::string> seglist;
+
+	while(std::getline(test, segment, ' '))
+	{
+	   seglist.push_back(segment);
+	}
 
         // Fetch data from Server
         //executeCommand(request_commands_command);
@@ -97,14 +110,14 @@ int main()
         temperature = temperature.substr(temperature.find('=') + 1, temperature.find('C') - temperature.find('=') - 2);
 
         if (saved_output_file.is_open()) {
-            saved_output_file << std::string(time_buffer) << "::5|" << temperature << "|" << serial_data;
+            saved_output_file << std::string(time_buffer) << "::" << seglist[0] << "|"  << temperature << "|" << seglist[1] << std::endl;
             saved_output_file.close();
         }
 
         if(current_output_file.is_open()) {
-            current_output_file << "5" << std::endl;
+            current_output_file << seglist[0] << std::endl;
             current_output_file << temperature << std::endl;
-            current_output_file << serial_data;
+            current_output_file << seglist[1];
             current_output_file.close();
         }
     }
